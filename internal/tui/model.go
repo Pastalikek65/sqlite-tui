@@ -59,6 +59,7 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	return m, nil
 }
 
+func (m Model) Tables() []string { return m.tables }
 func (m Model) View() string {
 	s := titleStyle.Render(" sqlite-tui ") + faintStyle.Render(fmt.Sprintf(" %s WAL:%dB", m.dbPath(), m.wal)) + "\n"
 	s += headerStyle.Render(" TABLES ") + "\n"

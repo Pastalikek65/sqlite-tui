@@ -3,3 +3,8 @@ sqlite-tui
 *.db-wal
 *.db-shm
 dist/
+coverage.out
+*.out
+*.test
+*.prof
+.serena/

@@ -26,6 +26,7 @@ func Open(path string) (*DB, error) {
 
 func (d *DB) Close() error { return d.sql.Close() }
 func (d *DB) Path() string { return d.path }
+func (d *DB) Sql() *sql.DB { return d.sql }
 
 func (d *DB) ListTables() ([]string, error) {
 	rows, err := d.sql.Query("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' ORDER BY name")
